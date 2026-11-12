@@ -352,3 +352,34 @@ Rode uma vez e guarde o endereço: ao compartilhar de novo, o link muda.
 - Não altere os datasets de avaliação - apenas os prompts em prompts/bug_to_user_story_v2.yml
 - Itere, itere, itere - é normal precisar de 3-5 iterações para atingir 0.8 em todas as métricas
 - Documente seu processo - a jornada de otimização é tão importante quanto o resultado final
+
+## Implementação realizada
+
+### Técnicas Aplicadas (Fase 2)
+
+O prompt `prompts/bug_to_user_story_v2.yml` combina:
+
+- **Few-shot Learning:** inclui dois exemplos completos de relatos de bugs e suas User Stories, orientando o formato e o nível de detalhe esperado.
+- **Role Prompting:** define o modelo como Product Manager técnico e analista de qualidade de software.
+- **Skeleton of Thought:** orienta uma sequência interna de identificação do ator, separação entre fatos e hipóteses, criação da história e revisão de critérios, sem exigir a exposição do raciocínio detalhado.
+
+A versão otimizada também define critérios Dado/Quando/Então, tratamento de lacunas, preservação de evidências técnicas e regras específicas para bugs de segurança e performance.
+
+### Resultados Finais
+
+A avaliação foi executada com 15 exemplos do dataset `mba-ia-pull-evaluation-prompt-eval`, usando `gpt-4.1-mini` para geração e `gpt-4.1` para avaliação.
+
+| Métrica | Resultado | Status |
+|---|---:|---|
+| Helpfulness | 0.86 | Aprovado |
+| Correctness | 0.86 | Aprovado |
+| F1-Score | 0.83 | Aprovado |
+| Clarity | 0.82 | Aprovado |
+| Precision | 0.90 | Aprovado |
+| Média geral | 0.8546 | Aprovado |
+
+Experimento no LangSmith:
+
+https://smith.langchain.com/o/16286b1b-afff-5519-8081-5ed301bc67e9/datasets/50a835a1-43dd-4337-8f4f-803ef822928b/compare?selectedSessions=a1faa11d-6c87-4420-a202-20759b42c8b9
+
+Todas as cinco métricas ficaram acima de 0.8. O link acima depende do acesso ao workspace do LangSmith; o compartilhamento público do dataset ainda precisa ser feito separadamente, caso seja exigido para a entrega.
