@@ -382,4 +382,10 @@ Experimento no LangSmith:
 
 https://smith.langchain.com/o/16286b1b-afff-5519-8081-5ed301bc67e9/datasets/50a835a1-43dd-4337-8f4f-803ef822928b/compare?selectedSessions=a1faa11d-6c87-4420-a202-20759b42c8b9
 
-Todas as cinco métricas ficaram acima de 0.8. O link acima depende do acesso ao workspace do LangSmith; o compartilhamento público do dataset ainda precisa ser feito separadamente, caso seja exigido para a entrega.
+Todas as cinco métricas ficaram acima de 0.8.
+
+Dataset e resultados compartilhados publicamente no LangSmith:
+
+https://smith.langchain.com/public/de08edfd-fee6-4c65-b42d-65b25620bdde/d
+
+O link público permite consultar os exemplos, os experimentos e as métricas da avaliação sem depender do acesso ao workspace privado.
